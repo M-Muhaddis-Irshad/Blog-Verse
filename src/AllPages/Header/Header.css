@@ -1,0 +1,280 @@
+/* Change background & text color on selection_________________________ */
+::selection {
+    background-color: dodgerblue;
+    color: white;
+}
+
+/* NavBar Start's___________________________________________________ */
+
+.navBar {
+    max-width: 100%;
+    padding: 5px 15px 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: all 0.2s;
+}
+
+/* Disable Body scroll when navbar show_______________________________________________ */
+body.active {
+    overflow: hidden !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navBar.scrlStart {
+    box-shadow: 0px 0px 10px black;
+}
+
+.logoContainer a {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.Logo {
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: 0.3s, rotate 0.5s;
+}
+
+a:hover .Logo {
+    transform: scale(1);
+    rotate: 0 0 1 360deg;
+    box-shadow: inset 0px 0px 5px dodgerblue;
+}
+
+.logoHeading {
+    color: dodgerblue;
+}
+
+
+
+
+/* Toggle Button Start's_____________________________________ */
+
+.navbarToggler {
+    padding: 5px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 40px;
+    height: 4px;
+    /* background-color: rgb(0, 95, 190); */
+    background: linear-gradient(to right, deepskyblue, rgb(0, 95, 190));
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.bar.active {
+    background-color: rgb(123, 0, 0);
+    background: linear-gradient(to right, rgb(170, 0, 0), rgb(87, 0, 0));
+}
+
+
+/* Toggle Button Start's_____________________________________ */
+
+
+.navLinksContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Navbar Links Start's________________________________________________ */
+
+.navLinks {
+    color: rgb(94, 175, 255);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.navLinks:hover {
+    color: rgb(0, 128, 255);
+}
+
+.navLinks::before {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid dodgerblue;
+    width: 100%;
+    transform: scaleX(0);
+    bottom: -2px;
+    transform-origin: right;
+    transition: transform 0.2s ease, transform-origin 0s;
+}
+
+.navLinks:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Auth Container Start's____________________________ */
+
+.lastLink {
+    margin-left: 100px;
+}
+
+/* Auth Container End's____________________________ */
+
+/* Portal Svg Start's______________________________ */
+
+.portal {
+    width: 22px;
+    height: 22px;
+    fill: rgb(0, 139, 185);
+    transition: 0.3s;
+}
+
+.navLinks:hover .portal {
+    fill: dodgerblue;
+}
+
+/* Portal Svg End's______________________________ */
+
+
+
+/* Navbar Links End's________________________________________________ */
+
+
+
+
+/* NavBar End's___________________________________________________ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries Start's_________________________________________ */
+
+@media screen and (max-width: 815px) {
+
+    .navBar {
+        padding: 0px 28px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .navBar.active {
+        backdrop-filter: none;
+        background-color: rgba(0, 162, 255, 0.7);
+        position: relative;
+    }
+
+    .navLinksContainer {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .navLinksContainer {
+        display: none;
+        width: 100%;
+        height: 100vh !important;
+        padding: 70px 24px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 10px rgb(0, 0, 0, 0.5);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        transition: all 0.2s;
+    }
+
+    .navLinksContainer.active {
+        display: flex;
+    }
+
+    .navLinks {
+        display: block;
+        font-size: larger;
+        width: 90%;
+        /* color: rgb(0, 104, 207); */
+        color: dodgerblue;
+        padding: 10px 20px;
+        margin-left: 30px !important;
+    }
+
+    .navLinks:hover {
+        color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+    }
+
+    .navLinks::before {
+        content: none;
+    }
+
+    #loginBtn {
+        width: 100%;
+    }
+
+    /* .lastLink {
+        margin: 0;
+    } */
+
+    svg {
+        fill: dodgerblue;
+        transition: 0.2s;
+    }
+
+    .lastLink:hover svg {
+        fill: white;
+    }
+
+    .navbarToggler {
+        display: flex;
+        z-index: 999;
+    }
+
+    .bar {
+        transition: 0.2s;
+    }
+
+    .navbarToggler.active .bar2 {
+        opacity: 0;
+    }
+
+    .navbarToggler.active .bar1 {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+
+    .navbarToggler.active .bar3 {
+        transform: translateY(-9.5px) rotate(-45deg);
+    }
+
+}
