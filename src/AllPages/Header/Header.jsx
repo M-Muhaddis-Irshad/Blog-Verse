@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
-import { Route, Routes } from "react-router";
-import { About } from "../About/About";
+import { Link, Route, Routes } from "react-router";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import Auth from "../Auth/AuthParent";
+import Login from "../Auth/Login/Login";
+import Register from '../Auth/Register/Register'
 // import {Logo} from "../../../public/Logo_Fav_Icon/withClr/whiteBgCropped.png";
 
 const Header = () => {
@@ -40,26 +44,30 @@ const Header = () => {
 
 
 
+
+
+  // Define Routes_______________________________________________
   <Routes>
 
-    <Route path="about" element={<About/>} />
+    <Route path="about" element={<About />} />
+
+    <Route path="contact" element={<Contact />} />
+
+    <Route element={<Auth />}>
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
+    </Route>
 
   </Routes>
-  
-  
+
+
   return (
+
     <header className={`navBar ${!scrollTop ? "scrlStart" : ""} ${open ? "active" : ""}`}>
+
       <div className="logoContainer">
-        {/* <a href="/">
-          <img
-            src="/Logo_Icons/RemovedBg/croped.png"
-            alt="CareNest Logo"
-            className="Logo"
-          />
-        </a> */}
 
         <a href="/" title="BlogVerse">
-          {/* <img src='../../../public/Logo_Fav_Icon/cropedLogo_Bg_Removed/bg_Removed.png' alt="BlogVerse Logo" className="Logo" /> */}
           <img src='../../../public/Logo_Fav_Icon/cropedLogo_Bg_Removed/bg_Removed.png' alt="BlogVerse Logo" className="Logo" />
 
           <h3 className="logoHeading">
@@ -67,7 +75,6 @@ const Header = () => {
           </h3>
         </a>
 
-        {/* <h3 className="logoHeading">CareNest</h3> */}
       </div>
 
       <div
@@ -80,14 +87,15 @@ const Header = () => {
       </div>
 
       <div className={`navLinksContainer ${open ? "active" : ""}`}>
-        <a className="navLinks" href="/">Home</a>
-        <a className="navLinks" href="/allPages/appointment/appointment.html">About</a>
-        <a className="navLinks" href="/allPages/bookings/myBookings.html">Contact Us</a>
+
+        <Link className="navLinks" to='/'>Home</Link>
+        <Link className="navLinks" to='about'>About</Link>
+        <Link className="navLinks" to='contact'>Contact</Link>
 
         <span id="loginBtn">
-          <a className="navLinks lastLink" href="/allPages/auth/login/login.html">
+          <Link className="navLinks lastLink" to='login'>
             Login <span className="portal" dangerouslySetInnerHTML={{ __html: portalSvg }} />
-          </a>
+          </Link>
         </span>
       </div>
     </header>

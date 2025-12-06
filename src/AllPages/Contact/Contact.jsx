@@ -1,21 +1,20 @@
 import React from 'react'
+import './Contact.css'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import './About.css'
 
-const About = () => {
+const Contact = () => {
     return (
-        <div className='parent'>
+        <>
 
             <Header />
 
-            <h1>About Page</h1>
+            <h1>Contact Page</h1>
 
             <Footer />
 
-        </div>
-
+        </>
     )
 }
 
-export default About
+export default Contact

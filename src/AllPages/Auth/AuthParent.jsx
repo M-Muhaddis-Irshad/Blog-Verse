@@ -1,21 +1,21 @@
 import React from 'react'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import './About.css'
+import { Outlet } from 'react-router'
 
-const About = () => {
+const AuthParent = () => {
     return (
-        <div className='parent'>
+        <>
 
             <Header />
 
-            <h1>About Page</h1>
+            <Outlet />
 
             <Footer />
 
-        </div>
-
+        </>
     )
 }
 
-export default About
+
+export default AuthParent
