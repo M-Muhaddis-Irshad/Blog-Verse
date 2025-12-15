@@ -1,3 +1,10 @@
+@import 'tailwindcss';
+
+.apply {
+    @apply p-2 my-4 bg-blue-600 text-6xl text-center text-amber-100;
+}
+
+
 footer {
     color: white;
     width: 100%;

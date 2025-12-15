@@ -1,19 +1,17 @@
 import React from 'react'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
 import './About.css'
 
 const About = () => {
     return (
-        <div className='parent'>
+        <>
 
-            <Header />
+            <div className='parent'>
 
-            <h1>About Page</h1>
+                <h1 className='text-7xl'>About Page</h1>
 
-            <Footer />
+            </div>
 
-        </div>
+        </>
 
     )
 }

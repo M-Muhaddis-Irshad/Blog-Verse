@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
-import { Link, Route, Routes } from "react-router";
-import About from "../About/About";
-import Contact from "../Contact/Contact";
-import Auth from "../Auth/AuthParent";
-import Login from "../Auth/Login/Login";
-import Register from '../Auth/Register/Register'
+import { NavLink } from "react-router";
+// import About from "../About/About";
+// import Contact from "../Contact/Contact";
+// import Auth from "../Auth/AuthParent";
+// import Login from "../Auth/Login/Login";
+// import Register from '../Auth/Register/Register'
 // import {Logo} from "../../../public/Logo_Fav_Icon/withClr/whiteBgCropped.png";
 
 const Header = () => {
@@ -47,18 +47,18 @@ const Header = () => {
 
 
   // Define Routes_______________________________________________
-  <Routes>
+  // <Routes>
 
-    <Route path="about" element={<About />} />
+  //   <Route path="about" element={<About />} />
 
-    <Route path="contact" element={<Contact />} />
+  //   <Route path="contact" element={<Contact />} />
 
-    <Route element={<Auth />}>
-      <Route path="login" element={<Login />} />
-      <Route path="register" element={<Register />} />
-    </Route>
+    // <Route element={<Auth />}>
+    //   <Route path="login" element={<Login />} />
+    //   <Route path="register" element={<Register />} />
+    // </Route>
 
-  </Routes>
+  // </Routes>
 
 
   return (
@@ -88,14 +88,14 @@ const Header = () => {
 
       <div className={`navLinksContainer ${open ? "active" : ""}`}>
 
-        <Link className="navLinks" to='/'>Home</Link>
-        <Link className="navLinks" to='about'>About</Link>
-        <Link className="navLinks" to='contact'>Contact</Link>
+        <NavLink className="navLinks" to='/'>Home</NavLink>
+        <NavLink className="navLinks" to='about'>About</NavLink>
+        <NavLink className="navLinks" to='contact'>Contact</NavLink>
 
         <span id="loginBtn">
-          <Link className="navLinks lastLink" to='login'>
+          <NavLink className="navLinks lastLink" to='login'>
             Login <span className="portal" dangerouslySetInnerHTML={{ __html: portalSvg }} />
-          </Link>
+          </NavLink>
         </span>
       </div>
     </header>
