@@ -1,17 +1,17 @@
-import React from 'react'
+import { React, useEffect } from 'react'
 import './Contact.css'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
 
 const Contact = () => {
+
+    useEffect(() => {
+        document.title = 'BlogVerse | Contact'
+    }, [])
+
+
     return (
         <>
 
-            <Header />
-
             <h1>Contact Page</h1>
-
-            <Footer />
 
         </>
     )

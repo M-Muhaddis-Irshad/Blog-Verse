@@ -1,8 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+import axios from 'axios';
 
 function App() {
 
+    const url = 'https://newsapi.org/v2/everything?' +
+        'q=Apple&' +
+        // 'from=2025-12-17&' +
+        'sortBy=popularity&' +
+        'apiKey=3f1954ad22c44757a48118aa7fc39c90';
+
+    const [date, setData] = useState([])
+
+    useEffect(() => {
+
+        axios.get(url)
+            .then(res => {
+                setData(res.data)
+                console.log(res.data.articles)
+            })
+            .catch(err => console.log(err))
+
+    }, [])
+    
     return (
         <>
 

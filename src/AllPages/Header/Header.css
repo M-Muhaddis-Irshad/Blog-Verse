@@ -133,6 +133,13 @@ a:hover .Logo {
 
 .lastLink {
     margin-left: 100px;
+    position: relative;
+}
+
+.lastLink::before {
+    content: "";
+    bottom: -6px;
+    position: absolute;
 }
 
 /* Auth Container End's____________________________ */
