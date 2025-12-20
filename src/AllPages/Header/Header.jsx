@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
 import { NavLink } from "react-router";
-// import About from "../About/About";
-// import Contact from "../Contact/Contact";
-// import Auth from "../Auth/AuthParent";
-// import Login from "../Auth/Login/Login";
-// import Register from '../Auth/Register/Register'
-// import {Logo} from "../../../public/Logo_Fav_Icon/withClr/whiteBgCropped.png";
+import image from '../../../public/Logo_Fav_Icon/originalLogo/psCroppedLogo.webp'
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -68,7 +63,7 @@ const Header = () => {
       <div className="logoContainer">
 
         <a href="/" title="BlogVerse">
-          <img src='../../../public/Logo_Fav_Icon/cropedLogo_Bg_Removed/bg_Removed.png' alt="BlogVerse Logo" className="Logo" />
+          <img src={image} alt="BlogVerse Logo" className="Logo" />
 
           <h3 className="logoHeading">
             BlogVerse
