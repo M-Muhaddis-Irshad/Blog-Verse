@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from './AllPages/Header/Header'
-import Footer from './AllPages/Footer/Footer'
+import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
 import { Outlet } from 'react-router'
 
 const Layout = () => {

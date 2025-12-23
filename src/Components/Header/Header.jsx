@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Header.css";
 import { NavLink } from "react-router";
 import image from '../../../public/Logo_Fav_Icon/originalLogo/psCroppedLogo.webp'
+import svg from '../../../public/svg/Portal.svg'
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -32,28 +33,10 @@ const Header = () => {
 
   // Fetch Portal SVG
   useEffect(() => {
-    fetch("/Logo_Icons/icons/Portal.svg")
+    fetch(svg)
       .then((res) => res.text())
       .then((svg) => setPortalSvg(svg));
   }, []);
-
-
-
-
-
-  // Define Routes_______________________________________________
-  // <Routes>
-
-  //   <Route path="about" element={<About />} />
-
-  //   <Route path="contact" element={<Contact />} />
-
-    // <Route element={<Auth />}>
-    //   <Route path="login" element={<Login />} />
-    //   <Route path="register" element={<Register />} />
-    // </Route>
-
-  // </Routes>
 
 
   return (
@@ -62,13 +45,13 @@ const Header = () => {
 
       <div className="logoContainer">
 
-        <a href="/" title="BlogVerse">
+        <NavLink to="/" title="BlogVerse">
           <img src={image} alt="BlogVerse Logo" className="Logo" />
 
           <h3 className="logoHeading">
             BlogVerse
           </h3>
-        </a>
+        </NavLink>
 
       </div>
 
@@ -89,7 +72,7 @@ const Header = () => {
 
         <span id="loginBtn">
           <NavLink className="navLinks lastLink" to='login'>
-            Login <span className="portal" dangerouslySetInnerHTML={{ __html: portalSvg }} />
+            <span className="">Login</span> <svg className="portal" dangerouslySetInnerHTML={{ __html: portalSvg }} />
           </NavLink>
         </span>
       </div>

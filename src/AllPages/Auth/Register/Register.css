@@ -1,0 +1,10 @@
+.RegisterContainer {
+    /* margin: auto; */
+    margin-block: 100px;
+}
+
+@media screen and (min-width: 2400px) {
+    .RegisterContainer {
+        margin-block: 26.24vh;
+    }
+}

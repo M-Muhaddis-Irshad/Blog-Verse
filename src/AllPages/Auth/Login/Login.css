@@ -1,0 +1,22 @@
+.LoginForm {
+    margin: auto;
+    margin-block: 14.6vh;
+}
+
+@media screen and (min-width: 1060px) {
+    .LoginForm {
+        margin-block: 20vh;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .LoginForm {
+        margin-block: 22vh;
+    }
+}
+
+@media screen and (min-width: 2400px) {
+    .LoginForm {
+        margin-block: 33.5vh;
+    }
+}

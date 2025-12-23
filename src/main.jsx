@@ -22,6 +22,7 @@ createRoot(document.getElementById('root')).render(
         <Route index element={<App />} />
         <Route path='about' element={<About />} />
         <Route path='contact' element={<Contact />} />
+        <Route path='*' element={<NotFound />} />
 
       </Route>
 
@@ -30,7 +31,6 @@ createRoot(document.getElementById('root')).render(
         <Route path="register" element={<Register />} />
       </Route>
 
-      <Route path='*' element={<NotFound />} />
 
     </Routes>
 
