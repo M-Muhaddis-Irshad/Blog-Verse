@@ -21,6 +21,7 @@ const IconText = ({ icon, text }) => (
 const CustomSkeleton = () => {
     return (
         <List
+        className='col-span-12'
             itemLayout="vertical"
             size="large"
             dataSource={listData}
