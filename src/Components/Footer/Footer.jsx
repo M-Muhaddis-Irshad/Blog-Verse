@@ -2,13 +2,14 @@ import React from 'react'
 import './Footer.css'
 
 const Footer = () => {
+  const currentTime = new Date();
   return (
 
     <footer>
       <div className="copyRightDiv">
 
         {/* <!-- <i class="fa-regular fa-copyright"></i> --> */}
-        © 2025 BlogVerse. All rights reserved.
+        © {currentTime.getFullYear()} BlogVerse. All rights reserved.
 
       </div>
     </footer>
